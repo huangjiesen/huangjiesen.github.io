@@ -52,8 +52,11 @@ category_map:
 	编程: programming
 	生活: life
 	其它: other
+	博客: blog
+	写作: writing
 tag_map:
-
+	博客: blog
+	写作: writing
 # Date / Time format
 ## Hexo uses Moment.js to parse and display date
 ## You can customize the date format as defined in
