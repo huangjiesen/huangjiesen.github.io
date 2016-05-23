@@ -14,7 +14,7 @@ categories:
 
 # 对Hexo做版本控制
 版本控制的主要目的是方便在不同的电脑维护Hexo及写作。这里利用github的分支来保存hexo框架的相关文件(hexo配置、md、主题等文件)到github page仓库。
-
+<!-- more -->
 这里假设已经在github上建好page仓库，也就是"yourname.github.io"名字的仓库，如{% link jiesenboor.github.io https://github.com/jiesenboor/jiesenboor.github.io %},以及在自己电脑上已经搭建好git、hexo、nodejs环境
 ## 新建hexo分支
 `page`仓库的`master`分支用来存放网站文件的，这是`GitHub Page`的要求，所以只好新建分支来保存Hexo原始文件，在下图的输入框输入分支名并按回车即完成分支创建。
