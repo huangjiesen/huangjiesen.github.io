@@ -28,6 +28,7 @@ archive_dir: archives
 category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
+#不渲染的文件。这里按文档说明仅指定目录的话，没有递归处理，目前只好指定具体目录
 skip_render: 
 - other/*
 - other/demo/photoviewer/*
