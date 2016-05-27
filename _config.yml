@@ -33,6 +33,7 @@ skip_render:
 - other/*
 - other/demo/photoviewer/*
 - other/demo/photoviewer/photoviewer/*
+- download/*
 
 # Writing
 new_post_name: :title.md # File name of new posts
