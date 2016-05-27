@@ -104,11 +104,12 @@ Type=Application
 Categories=GNOME;Application;Documentation;
 MimeType=application/x-ms-dos-executable;application/x-msi;application/x-ms-shortcut;
 ```
-说明
+说明:
 1. `Name`指定"快捷方式"名称
 1. `Exec`指定要执行的命令，wine 后面要写QQScLauncher.exe的绝对路径
 1. `Icon`指定快捷方式图片，在网上随便找一张QQ图片就是了 
 将`wine-qq.desktop` 文件放到 `/usr/share/applications/`或`~/.local/share/applications`
+
 ``` shell
 sudo mv wine-qq.desktop ~/.local/share/applications/
 ```
