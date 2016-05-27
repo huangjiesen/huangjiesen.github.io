@@ -21,7 +21,11 @@ sudo apt-get install winehq-devel
 # 配置wine
 运行`winecfg`,第一次运行时可能会弹出安装组件的提示，点击安装就好，在`应用程序`页签底部，`Windows版本`，选择为"8.1"。8.0可能也是可以的，但我选的是8.1。
 
-设置为 windows 8.1，打开所有外部链接，比如qq空间等，会使用内置的IE浏览器。如果不喜欢这个行为，在安装后QQ后，可以用`winecfg`修改为`Windows XP`，增加一个`QQProtect.exe`设置，将其单独设置为`Windows 8.1`即可。
+设置为 windows 8.1，打开所有外部链接，比如qq空间等，会使用内置的IE浏览器。如果不喜欢这个行为，在安装后QQ后(`注意`)，可以用`winecfg`修改为`Windows XP`，增加一个`QQProtect.exe`设置，将其单独设置为`Windows 8.1`即可。
+如果不确定`QQProtect.exe`的路径，可以用以下命令查找：
+``` shell 
+find ~/.wine/ -name QQProtect.exe
+```
 
 # 安装QQ轻聊版
 [官方下载页面:http://im.qq.com/lightqq/](http://im.qq.com/lightqq/)
@@ -109,8 +113,15 @@ MimeType=application/x-ms-dos-executable;application/x-msi;application/x-ms-shor
 1. `Exec`指定要执行的命令，wine 后面要写QQScLauncher.exe的绝对路径
 1. `Icon`指定快捷方式图片，在网上随便找一张QQ图片就是了 
 
-将`wine-qq.desktop` 文件放到 `/usr/share/applications/`或`~/.local/share/applications`
+修改 `wine-qq.desktop` 文件中Exec和Icon路径，然后将其放到 `/usr/share/applications/`或`~/.local/share/applications`目录下
 ``` shell
 sudo mv wine-qq.desktop ~/.local/share/applications/
 ```
 这时启动器中就能找到对应的`快捷方式`了
+# 已知BUG
+使用的时候还是会有一些其它的问题
+1. 不能保存密码和自动登录
+1. 密码输入框有点难点，用弹出小键盘输入或者轮换点击账号密码框1,2次就可以输入了
+1. 本地摄像头被禁用
+1. 离线后无法再上线，只能退出重新登录
+1. 其他各种小问题
