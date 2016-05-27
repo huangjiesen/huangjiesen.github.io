@@ -30,7 +30,7 @@ menu:
   archives: /archives
   categories: /categories
   tags: /tags
-  commonweal: /404.html
+  #commonweal: /404.html
 
 
 # Enable/Disable menu icons.
@@ -98,7 +98,7 @@ font:
   # The `size` option use `px` as unit
   logo:
     external: true
-    family:
+    family: 'Lobster Two'
     size:
 
   # Font settings for <code> and code blocks.

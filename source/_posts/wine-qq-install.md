@@ -6,7 +6,7 @@ tags:
 - QQ
 - Ubuntu
 categories:
-- wine
+- Wine
 ---
 这里介绍在Ubuntu系统安装QQ轻聊版的步骤
 # wine环境准备
@@ -16,7 +16,7 @@ sudo add-apt-repository ppa:wine/wine-builds
 sudo apt-get update
 sudo apt-get install winehq-devel
 ```
-如果你之前运行过wine的话，需要删除的`~/.wine`目录，建议备份后再删除。
+如果你之前运行过wine的话，需要删除`~/.wine`目录，建议备份后再删除。
 <!-- more -->
 # 配置wine
 运行`winecfg`,第一次运行时可能会弹出安装组件的提示，点击安装就好，在`应用程序`页签底部，`Windows版本`，选择为"8.1"。8.0可能也是可以的，但我选的是8.1。
@@ -61,31 +61,39 @@ vim ~/.wine/user.reg
 解决QQ界面字体显示为`方框`的问题。
 将以下代码保存为`.reg`格式的文件，如：`font.reg`,在终端运行`wine regedit`,在弹出的注册表界面导入该文件。
 ``` regedit
+REGEDIT4
 [HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\FontSubstitutes]
-"Arial"="simsun"
-"Arial CE,238"="simsun"
-"Arial CYR,204"="simsun"
-"Arial Greek,161"="simsun"
-"Arial TUR,162"="simsun"
-"Courier New"="simsun"
-"Courier New CE,238"="simsun"
-"Courier New CYR,204"="simsun"
-"Courier New Greek,161"="simsun"
-"Courier New TUR,162"="simsun"
-"FixedSys"="simsun"
-"Helv"="simsun"
-"Helvetica"="simsun"
-"MS Sans Serif"="simsun"
-"MS Shell Dlg"="simsun"
-"MS Shell Dlg 2"="simsun"
-"System"="simsun"
-"Tahoma"="simsun"
-"Times"="simsun"
-"Times New Roman CE,238"="simsun"
-"Times New Roman CYR,204"="simsun"
-"Times New Roman Greek,161"="simsun"
-"Times New Roman TUR,162"="simsun"
-"Tms Rmn"="simsun"
+"Arial"="SimSun"
+"Arial Baltic,186"="SimSun"
+"Arial CE,238"="SimSun"
+"Arial CYR,204"="SimSun"
+"Arial Greek,161"="SimSun"
+"Arial TUR,162"="SimSun"
+"Courier New"="SimSun"
+"Courier New Baltic,186"="SimSun"
+"Courier New CE,238"="SimSun"
+"Courier New CYR,204"="SimSun"
+"Courier New Greek,161"="SimSun"
+"Courier New TUR,162"="SimSun"
+"Helv"="SimSun"
+"Helvetica"="SimSun"
+"MS Shell Dlg"="SimSun"
+"MS Shell Dlg 2"="SimSun"
+"MS Sans Serif"="SimSun"
+"Times"="SimSun"
+"Times New Roman Baltic,186"="SimSun"
+"Times New Roman CE,238"="SimSun"
+"Times New Roman CYR,204"="SimSun"
+"Times New Roman Greek,161"="SimSun"
+"Times New Roman TUR,162"="SimSun"
+"Tms Rmn"="SimSun"
+"FixedSys"="SimSun"
+"System"="SimSun"
+"Tahoma"="SimSun"
+"\x5b8b\x4f53"="SimSun"
+"\x65b0\x5b8b\x4f53"="SimSun"
+"\u9ed1\u4f53"="SimSun"
+"\u6977\u4f53"="SimSun"
 ```
 
 # 运行QQ
