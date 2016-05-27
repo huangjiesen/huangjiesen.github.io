@@ -46,10 +46,10 @@ vim ~/.wine/user.reg
 "txplatform.exe"=""
 "txupd.exe"=""
 ```
-** 说明 **
+** 修改注册表说明 **
 1. 禁用 qcap 的原因是“禁用本地摄像头”（如果有的话），因为 wine 目前的摄像头处理跟 QQ 所需要调用的接口仍有差距，本地摄像头打开会崩溃，结果是视频聊天时如果使用了本地摄像头会崩溃。禁用后，虽然不能使用本地的视频，但远程的视频可以正常使用。
 1. 替换 riched20.dll，是为了让“登录对话框可以输入”。
-1. 替换 iphlpapi.dll，是避免登录后的崩溃退出。如果出现QQ运行不了，可以试着去掉这一项。
+1. 替换 iphlpapi.dll，是避免登录后的崩溃退出。如果出现QQ运行不了，可以试着去掉`"*iphlpapi"="native"`这一项。
 1. 禁用 txplatform.exe，是因为这个进程在 wine QQ 退出后不退出，对于 Windows 倒是无所谓，对于 Linux 来说，这意味着后台跑着一堆 wine 进程。
 1. 禁用 txupd.exe，是因为它在后台定期检查更新时会偶发崩溃，不影响使用，但总弹“wine 崩溃对话框”也是不好的。
 
@@ -104,7 +104,7 @@ Type=Application
 Categories=GNOME;Application;Documentation;
 MimeType=application/x-ms-dos-executable;application/x-msi;application/x-ms-shortcut;
 ```
-说明:
+** 说明: **
 1. `Name`指定"快捷方式"名称
 1. `Exec`指定要执行的命令，wine 后面要写QQScLauncher.exe的绝对路径
 1. `Icon`指定快捷方式图片，在网上随便找一张QQ图片就是了 
