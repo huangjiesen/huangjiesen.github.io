@@ -96,17 +96,18 @@ Desktop Entry类似windows的快捷方式
 将以下代码保存为`.desktop`格式的文件，如：`wine-qq.desktop`
 ``` shell
 [Desktop Entry]
-#"快捷方式"名称
 Name=QQ
-#这里是要执行的命令，wine 后面要写QQScLauncher.exe的绝对路径
 Exec=wine "/home/xxx/.wine/drive_c/xxx/QQScLauncher.exe"
-#这是指定快捷方式图片，在网上随便找一张QQ图片就是了
 Icon=/xxx/qq.png
 Terminal=false
 Type=Application
 Categories=GNOME;Application;Documentation;
 MimeType=application/x-ms-dos-executable;application/x-msi;application/x-ms-shortcut;
 ```
+说明
+1. `Name`指定"快捷方式"名称
+1. `Exec`指定要执行的命令，wine 后面要写QQScLauncher.exe的绝对路径
+1. `Icon`指定快捷方式图片，在网上随便找一张QQ图片就是了 
 将`wine-qq.desktop` 文件放到 `/usr/share/applications/`或`~/.local/share/applications`
 ``` shell
 sudo mv wine-qq.desktop ~/.local/share/applications/
