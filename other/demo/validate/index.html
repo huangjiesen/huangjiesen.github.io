@@ -1,0 +1,104 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript" src="validate.js"></script>
+    <style>
+        .warn{
+            border:1px solid red;
+        }
+        li{
+            list-style: none;
+            line-height: 40px;
+        }
+    </style>
+</head>
+<body>
+    <form id="submitForm">
+        <ul>
+            <li>用户名：<input name="username" /><span></span></li>
+            <li>密码：<input name="password" /><span></span></li>
+            <li>手机：<input name="phone" /><span></span></li>
+            <li><input onclick="submitFrom()" value="提交" type="button"></li></li>
+        </ul>
+    </form>
+    <div id="msg"></div>
+    <script>
+        $.extend($.fn.validate.style,{
+            // 验证通过时的验证框处理
+            ok:function (target) {
+                target.removeClass("warn");
+                target.next().text("ok");
+            },
+            // 验证不通过时的验证框处理
+            error:function (target,msg,isEmpty) {
+                target.addClass("warn")
+                    .next().text(isEmpty?msg.empty:msg.invalid);
+            },
+            // 获取焦点时的验证框处理
+            focus:function (target) {
+                target.removeClass("ok")
+                    .removeClass("warn")
+                    .next().text("");
+            }
+        });
+
+        $.extend($.fn.validate.rules, {
+            minLength:function(value,param){
+                return value.length > param[0];
+            },
+            maxLength:function(value,param){
+                return value.length < param[0];
+            }
+        });
+
+        var $name=$("[name='username']").validate({
+            required:true,
+            msg:{
+                empty:"请输入用户名",
+                invalid:"你输入的用户名不正确，用户名由6~10位字母和数字组成、不能以数字开头"
+            },
+            validType:function (value) {
+                return /^[a-z][a-z0-9]{5,9}$/.test(value);
+            },
+            onInvalid:function (self, msg) {
+                $("#msg").text("用户名验证不通过");
+            },
+            onEmpty:function (self,msg) {
+                $("#msg").text("用户名没有输入内容");
+            }
+        });
+
+        var $pwd=$("[name='password']").validate({
+            required:true,
+            msg:{
+                empty:"请输入密码",
+                invalid:"你输入5~10位的密码"
+            },
+            validType:["minLength[4]","maxLength[11]"],
+            onInvalid:function (self,msg,type) {
+                $("#msg").text("密码名进行"+type+"验证不通过");
+            },
+            onEmpty:function (self,msg) {
+                $("#msg").text("密码名没有输入内容");
+            }
+        });
+
+        var $phone=$("[name='phone']").validate({
+            required:false,
+            msg:{
+                invalid:"请输入11位手机号码"
+            },
+            validType:"phone"
+        });
+
+        function submitFrom() {
+            if($name.validate("validate")&&$pwd.validate("validate")&&$phone.validate("validate")) {
+                $("#msg").text("表单json对象："+JSON.stringify($("#submitForm").formToJson()));
+            }
+        }
+    </script>
+</body>
+</html>
