@@ -33,6 +33,7 @@ skip_render:
 - other/*
 - other/demo/photoviewer/*
 - other/demo/photoviewer/photoviewer/*
+- other/demo/validate/*
 - download/*
 
 # Writing
