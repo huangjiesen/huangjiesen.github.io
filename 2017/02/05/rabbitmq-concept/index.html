@@ -74,7 +74,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="消息队列,MQ,RabbitMQ," />
 
 
 
@@ -90,12 +90,30 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Neseij`s notes">
-<meta property="og:url" content="http://jiesenboor.github.io/tags/blog/index.html">
+<meta name="description" content="本文主要介绍RabbitMQ的相关概念
+Exchange - 交换器交换机的类型有以下4种：
+fanout - 广播以广播的形式发送信息、所有订阅者(队列)均能收到同一条消息
+direct - 严格广播严格的广播形式、较fanout类型多了个路由关键字、所有匹配路由关键字的订阅者(队列)均能收到同一条消息
+topic - 配置广播">
+<meta property="og:type" content="article">
+<meta property="og:title" content="RabbitMQ入门">
+<meta property="og:url" content="http://jiesenboor.github.io/2017/02/05/rabbitmq-concept/index.html">
 <meta property="og:site_name" content="Neseij`s notes">
+<meta property="og:description" content="本文主要介绍RabbitMQ的相关概念
+Exchange - 交换器交换机的类型有以下4种：
+fanout - 广播以广播的形式发送信息、所有订阅者(队列)均能收到同一条消息
+direct - 严格广播严格的广播形式、较fanout类型多了个路由关键字、所有匹配路由关键字的订阅者(队列)均能收到同一条消息
+topic - 配置广播">
+<meta property="og:image" content="http://jiesenboor.github.io/imgs/12.png">
+<meta property="og:updated_time" content="2017-02-05T13:11:53.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Neseij`s notes">
+<meta name="twitter:title" content="RabbitMQ入门">
+<meta name="twitter:description" content="本文主要介绍RabbitMQ的相关概念
+Exchange - 交换器交换机的类型有以下4种：
+fanout - 广播以广播的形式发送信息、所有订阅者(队列)均能收到同一条消息
+direct - 严格广播严格的广播形式、较fanout类型多了个路由关键字、所有匹配路由关键字的订阅者(队列)均能收到同一条消息
+topic - 配置广播">
+<meta name="twitter:image" content="http://jiesenboor.github.io/imgs/12.png">
 
 
 
@@ -113,7 +131,7 @@
   };
 </script>
 
-  <title> 标签: 博客 | Neseij`s notes </title>
+  <title> RabbitMQ入门 | Neseij`s notes </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -134,7 +152,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -252,46 +270,221 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h2 >
-        博客
-        <small>标签</small>
-      </h2>
-    </div>
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                RabbitMQ入门
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-02-05T20:06:45+08:00" content="2017-02-05">
+              2017-02-05
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/消息队列/" itemprop="url" rel="index">
+                    <span itemprop="name">消息队列</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/02/05/rabbitmq-concept/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/05/rabbitmq-concept/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2017/02/05/rabbitmq-concept/" class="leancloud_visitors" data-flag-title="RabbitMQ入门">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+              &nbsp; | &nbsp;
+              <span class="page-pv"><i class="fa fa-file-o"></i>
+              <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+              </span>
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
       
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+      
+        <p>本文主要介绍RabbitMQ的相关概念</p>
+<h1 id="Exchange-交换器"><a href="#Exchange-交换器" class="headerlink" title="Exchange - 交换器"></a>Exchange - 交换器</h1><p>交换机的类型有以下4种：</p>
+<h2 id="fanout-广播"><a href="#fanout-广播" class="headerlink" title="fanout - 广播"></a>fanout - 广播</h2><p>以广播的形式发送信息、所有订阅者(队列)均能收到同一条消息</p>
+<h2 id="direct-严格广播"><a href="#direct-严格广播" class="headerlink" title="direct - 严格广播"></a>direct - 严格广播</h2><p>严格的广播形式、较<code>fanout</code>类型多了个路由关键字、所有匹配路由关键字的订阅者(队列)均能收到同一条消息</p>
+<h2 id="topic-配置广播"><a href="#topic-配置广播" class="headerlink" title="topic - 配置广播"></a>topic - 配置广播</h2><a id="more"></a>
+<p>发送到<code>topic</code>类型的交易所不能有任意的路由的关键字-它必须是一个关键字列表，由点分隔。这关键字可以是任意的，但是通常可以说明消息的基本的联系。几个合法的路由关键字例子:</p>
+<ul>
+<li><code>stock.usd.nyse</code></li>
+<li><code>nyse.vmw</code></li>
+<li><code>quick.orange.rabbit</code></li>
+</ul>
+<p>关键字上限是255个字节。topic交易所逻辑背后是与direct交易所类型类似-一个带特别的路由关键字的消息将会被传递到所有匹配绑定的关键字的队列。但是有两个特别重要的绑定关键字。</p>
+<blockquote>
+<p><code>*</code> (星标) 能替代任意一个单词<br><code>#</code> (哈希) 能代替零个或多个单词</p>
+</blockquote>
+<p><img src="/imgs/12.png" alt=""></p>
+<h2 id="headers"><a href="#headers" class="headerlink" title="headers"></a>headers</h2><p><code>headers</code>类型的exchange使用的比较少，它也是忽略routingKey的一种路由方式。是使用Headers来匹配的。Headers是一个键值对，可以定义成Hashtable。发送者在发送的时候定义一些键值对，接收者也可以再绑定时候传入一些键值对，两者匹配的话，则对应的队列就可以收到消息。匹配有两种方式<code>all</code>和<code>any</code>。这两种方式是在接收端必须要用键值<code>x-mactch</code>来定义。all代表定义的多个键值对都要满足，而any则代码只要满足一个就可以了。fanout，direct，topic exchange的routingKey都需要要字符串形式的，而headers exchange则没有这个要求，因为键值对的值可以是任何类型。</p>
 
-      <h1 class="post-title">
+      
+    </div>
+
+    <div>
+      
         
-            <a class="post-title-link" href="/2016/05/21/hexo-everywhere/" itemprop="url">
-              
-                <span itemprop="name">在不同的电脑维护Hexo和写作</span>
-              
-            </a>
+      
+    </div>
+
+    <div>
+      
         
-      </h1>
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/imgs/wechat.png" alt="HuangJS WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/imgs/alipay.jpg" alt="HuangJS Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-05-21T15:20:40+08:00"
-              content="2016-05-21" >
-          05-21
-        </time>
-      </div>
 
-    </header>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/消息队列/" rel="tag">#消息队列</a>
+          
+            <a href="/tags/MQ/" rel="tag">#MQ</a>
+          
+            <a href="/tags/RabbitMQ/" rel="tag">#RabbitMQ</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/02/03/rabbitmq-config/" rel="next" title="RabbitMQ安装与配置">
+                <i class="fa fa-chevron-left"></i> RabbitMQ安装与配置
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </article>
 
 
-    
-  </div>
 
-  
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2017/02/05/rabbitmq-concept/"
+     data-title="RabbitMQ入门"
+     data-content=""
+     data-url="http://jiesenboor.github.io/2017/02/05/rabbitmq-concept/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
 
 
           </div>
@@ -299,6 +492,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2017/02/05/rabbitmq-concept/"
+           data-title="RabbitMQ入门" data-url="http://jiesenboor.github.io/2017/02/05/rabbitmq-concept/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -318,8 +519,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/imgs/avatar.png"
@@ -407,6 +617,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Exchange-交换器"><span class="nav-number">1.</span> <span class="nav-text">Exchange - 交换器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#fanout-广播"><span class="nav-number">1.1.</span> <span class="nav-text">fanout - 广播</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#direct-严格广播"><span class="nav-number">1.2.</span> <span class="nav-text">direct - 严格广播</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#topic-配置广播"><span class="nav-number">1.3.</span> <span class="nav-text">topic - 配置广播</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#headers"><span class="nav-number">1.4.</span> <span class="nav-text">headers</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -526,6 +747,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 
