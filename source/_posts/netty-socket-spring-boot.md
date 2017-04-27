@@ -12,7 +12,7 @@ categories:
 # Spring boot集成websocket通信
 ## 介绍
 websocket是一个持久化的协议，实现了浏览器与服务器的全双工通信。不再像http那样，只有在浏览器发出request之后才有response，websocket能实现服务器主动向浏览器发出消息。
-
+<!-- more -->
 ## Spring boot项目集成实现
 
 1. 在pom.xml中添加依赖
