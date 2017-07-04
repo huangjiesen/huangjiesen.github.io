@@ -91,7 +91,8 @@ deploy:
 #多说分享，这个功能必须与多说评论同时使用
 duoshuo_share: true
 #多说评论
-duoshuo_shortname: jiesenboor
+#duoshuo_shortname: jiesenboor
+gentie_productKey: 62f8becea1bd4b7db039f09ac5077d21
 #swiftype搜索: https://swiftype.com/home
 swiftype_key: Qz27t2QcoCx9AdRovT4n
 

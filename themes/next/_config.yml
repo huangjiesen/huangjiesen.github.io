@@ -394,5 +394,7 @@ css: css
 js: js
 images: images
 
+gentie_productKey: 62f8becea1bd4b7db039f09ac5077d21
+
 # Theme version
 version: 5.0.1
