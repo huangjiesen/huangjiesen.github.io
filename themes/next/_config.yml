@@ -283,11 +283,11 @@ mathjax:
 # Make duoshuo show UA
 # user_id must NOT be null when admin_enable is true!
 # you can visit http://dev.duoshuo.com get duoshuo user id.
-duoshuo_info:
-  ua_enable: true
-  admin_enable: true
-  user_id: 6282127974233802000
-  admin_nickname: 主编大爷
+#duoshuo_info:
+#  ua_enable: true
+#  admin_enable: true
+#  user_id: 6282127974233802000
+#  admin_nickname: 主编大爷
 
 
 
